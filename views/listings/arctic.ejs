@@ -1,0 +1,43 @@
+<%layout("/layouts/boilerPlate") %>
+
+    <body>
+
+
+
+        <div class="col-6 offset-3 mt-4">
+   
+            <% if(data.length == 0){ %>
+ 
+                <h2 class="offset-3">No Results Found😕</h2>
+
+            <% } %>
+
+            <% for(arctic of data){ %>
+
+                <a href="/listings/<%=arctic._id%>" class="listing-link">
+
+                    <div class="card listing-card ">
+                        <div class="card-img-overlay"></div>
+                        <img src="<%=arctic.image.url%>" class="card-img-top " style="height: 18rem;"
+                            alt="<%=arctic.image%>">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>
+                                    <p>
+                                        <%=arctic.title%>
+                                    </p>
+                                </b>
+                            <p>&#36 <%=arctic.price.toLocaleString("en-US")%></p>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+
+       
+
+        <% } %>
+
+    </div>
+
+    </body>

@@ -1,0 +1,44 @@
+<%layout("/layouts/boilerPlate") %>
+
+    <body>
+
+
+
+        <div class="col-6 offset-3 mt-4">
+
+
+            <% if(data.length == 0){ %>
+ 
+                <h2 class="offset-3">No Results Found😕</h2>
+
+            <% } %>
+            
+            <% for(mountains of data){ %>
+
+                <a href="/listings/<%=mountains._id%>" class="listing-link">
+
+                    <div class="card listing-card ">
+                        <div class="card-img-overlay"></div>
+                        <img src="<%=mountains.image.url%>" class="card-img-top " style="height: 18rem;"
+                            alt="<%=mountains.image%>">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>
+                                    <p>
+                                        <%=mountains.title%>
+                                    </p>
+                                </b>
+                            <p>&#36 <%=mountains.price.toLocaleString("en-US")%></p>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+
+       
+
+        <% } %>
+
+    </div>
+
+    </body>

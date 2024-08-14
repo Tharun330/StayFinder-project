@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerPlate")%>
+
+
+<h2 class="offset-2 mt-3">My Bookings</h2>
+<% for(let booking of myBookings){ %>
+
+    <div class="card mb-3 offset-3 mt-5 p-2" style="max-width: 750px;  ">
+        <div class="row g-0">
+          <div class="col-md-4 mb-2 bookingcontainer">
+            <img  src="<%=booking.hotelId.image.url%>" class="rounded float-start " alt="hotel image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h5 class="card-title"><%=booking.hotelId.title%></h5>
+              <p class="card-text">BookingRef: <%=booking.bookingRef%> </p>
+              <p class="card-text"><i>Total Price:</i> <b><%=booking.totalprice%></b> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<%}%>

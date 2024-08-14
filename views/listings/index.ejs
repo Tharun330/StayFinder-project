@@ -1,0 +1,207 @@
+<%layout("/layouts/boilerPlate") %>
+
+
+    <% function tax(price){ %>
+        <% const salesTax=0.20 %>
+            <% let tax=price * salesTax %>
+                <% let afterTaxPrice=price + tax %>
+                    <% return afterTaxPrice.toLocaleString("en-US")%>;
+                        <%}%>
+
+                            <body>
+                                <div class="secondNav dropdown-toggle-md">
+                                    <div class="filterContainer">
+                                        <a class="nav_a" href="/listings/rooms">
+                                            <div class="filters">
+                                                <i class="fa-solid fa-bed"></i>
+                                                <p>Rooms</p>
+                                            </div>
+                                        </a>
+
+                                        <a class="nav_a" href="/listings/iconiccity">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-mountain-city"></i>
+                                                <p>Iconic Cities</p>
+
+                                            </div>
+                                        </a>
+                                        <a class="nav_a" href="/listings/mountains">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-mountain-sun"></i>
+                                                <p>Mountains</p>
+
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/castles">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-chess-rook"></i>
+                                                <p>Castle</p>
+
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/amazingpools">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-person-swimming"></i>
+                                                <p>Amazing Pools</p>
+
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/camping">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-campground"></i>
+                                                <p>Camping</p>
+
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/arctic">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-snowflake"></i>
+                                                <p>Arctic</p>
+
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/farms">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-cow"></i>
+                                                <p>Farms</p>
+
+                                            </div>
+                                        </a>
+
+                                        <a href="/listings/beachfront">
+                                            <div class="filters">
+
+                                                <i class="fa-solid fa-umbrella-beach"></i>
+                                                <p>BeachFront</p>
+
+                                            </div>
+                                        </a>
+
+                                    </div>
+
+                                    <div class="form-check form-switch ">
+                                        <label class="form-check-label" for="flexSwitchCheckChecked">Display Total After
+                                            Taxes</label>
+                                        <input class="form-check-input" type="checkbox" role="switch"
+                                            id="flexSwitchCheckChecked" unchecked>
+
+
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <!-- <h1>All Hotels List</h1> -->
+                                <!-- <form method="get" action="/listings/new">
+        <button>Add Place</button>
+    </form> -->
+
+                                <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+
+                                    <% for(let data of dataList) { %>
+                                        <a href="/listings/<%=data._id%>" class="listing-link">
+
+                                            <div class="card listing-card">
+                                                <div class="card-img-overlay"></div>
+                                                <img src="<%=data.image.url%>" class="card-img-top "
+                                                    style="height: 18rem;" alt="<%=data.image%>">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <p>
+                                                                <%=data.title%>
+                                                            </p>
+                                                        </b>
+                                                    <p class="pricebefore">&#36 <%=data.price.toLocaleString("en-US")%>
+                                                            &nbsp;<i style="font-size: x-small;">+20% tax</i></p>
+                                                    <p class="priceafter">&#36 <%-tax(data.price) %> <i
+                                                                style="font-size: small;">total after taxes</i></p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <% } %>
+                                </div>
+
+
+
+
+
+
+
+
+                                <!-- <% for(let data of dataList) { %>
+
+        <li><a href="/listings/<%=data.id%>">
+                <%=data.title%>
+            </a></li>
+            <li><a href="/listings/<%=data.id%>">
+                <%=data.title%>
+            </a></li>
+
+        <% } %> -->
+
+
+                                <script>
+
+                                    let formcheckinput = document.querySelector("#flexSwitchCheckChecked");
+
+
+                                    formcheckinput.addEventListener('click', () => {
+                                        let priceafter = document.getElementsByClassName("priceafter");
+                                        let pricebefore = document.getElementsByClassName("pricebefore");
+
+                                        for (price of pricebefore)
+
+
+                                            if (price.style.display != "none") {
+
+                                                //   pricebefore.classList.add("hide");
+
+                                                price.style.display = "none"
+
+                                            } else {
+                                                price.style.display = "inline"
+                                            }
+
+
+                                        for (price of priceafter)
+
+
+                                            if (price.style.display != "inline") {
+
+                                                //   pricebefore.classList.add("hide");
+
+                                                price.style.display = "inline"
+
+                                            } else {
+                                                price.style.display = "none"
+                                            }
+
+
+
+
+
+                                        console.log("helo");
+
+                                    })
+                                </script>
+                            </body>

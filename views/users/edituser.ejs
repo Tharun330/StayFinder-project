@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerPlate") %>
+
+<form method="post" action="/user/<%=user._id%>?_method=PUT" class="col-6 offset-3" > 
+    <div class="mt-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text"  class="form-control"  name="user[name]" value="<%=user.name%>" placeholder="Enter name" required>
+    </div>
+    <div class="mt-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text"  class="form-control"  name="user[username]" value="<%=user.username%>" placeholder="Enter username" required>
+    </div>
+    <div class="mt-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text"  class="form-control"  name="user[email]" value="<%=user.email%>" placeholder="Enter email" required>
+    </div>
+
+    
+        <button class="btn post-btn btn-primary mt-3">Update</button>
+   
+</form>

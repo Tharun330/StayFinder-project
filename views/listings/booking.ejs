@@ -1,0 +1,78 @@
+<% layout("/layouts/boilerPlate")%>
+
+
+    <div class="bookingDetails col-6 offset-3">
+        <h3>Booking Summary</h3>
+
+        <div class="booking-info-heading">
+            <label>Stay Details</label>
+            <label>Price</label>
+        </div>
+        <div class="booking-info-heading">
+            <h5 class="mt">
+                <%= book.title %>
+            </h5>
+            <p> &#36 <%= book.price %>
+            </p>
+
+        </div>
+
+        <div class="booking-info-heading">
+            <h5 class="mt">Taxes 20% </h5>
+            <p> &#36 <%= (book.price)*0.20 %>
+            </p>
+
+        </div>
+        <hr>
+        <div class="booking-info-heading">
+            <h5 class="mt">Total</h5>
+            <% let totalprice = (book.price)*0.20+ (book.price) %>
+            <p name="total"> &#36 <%= totalprice %> </p>
+
+
+        </div>
+
+        <!-- action="/listings/<%=book.id%>/bookingconfirm" -->
+
+        <div class="booking-info-heading">
+
+
+            <form method="post" action="/listings/<%=book.id%>/bookingconfirm">
+
+                <button id="confirmbookbutton" class="btn bookButton">Checkout
+                    Booking</button>
+            </form>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+
+
+        // function popUp(evt) {
+ 
+        //     // evt.defaultprevent();
+
+        //     let btn = document.querySelector("#confirmbookbutton");
+        //     btn.addEventListener('click', (e) => {
+        //         console.log(e);
+        //         console.log("subm it ckkd");
+        //         let bookingRefNum = Math.floor(Math.random() * 10000000000000000) + 1;
+        //         console.log(bookingRefNum)
+        //         Swal.fire({
+        //             title: "Your Stay Booked!",
+        //             text: "Booking Ref: " + bookingRefNum,
+        //             icon: "success"
+        //         });
+
+        //     })
+        // }
+
+
+    </script>
