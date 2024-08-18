@@ -1,27 +1,34 @@
 <%layout("/layouts/boilerPlate") %>
 
 
-  <div class="bookingDetails col-6 offset-3 mt-5">
-    <div class="d-flex justify-content-start offset-3 mt-3">
+  <div class="bookingDetails loginContainer col-6 offset-3 mt-5">
+    
+  <div class="grid">
+    <div class="g-items"> 
       <label class="form-label"><b>Name:</b></label>
-      <p class=" ms-5 ">
+    </div>
+    <div class="g-items">
+      <p class=" aligntext ms-5 ">
         <%=accountDetails.name%>
       </p>
     </div>
-
-    <div class="d-flex justify-content-start offset-3">
+    <div class="g-items">
       <label class="form-label"><b>Username:</b></label>
-      <p class="ms-3">
-        <%=accountDetails.username%>
+    </div>
+    <div class="g-items">
+      <p class=" aligntext ms-5 ">
+        <%=accountDetails.name%>
       </p>
     </div>
-
-    <div class="d-flex justify-content-start offset-3">
+    <div class="g-items">
       <label class="form-label"><b>Email:</b></label>
+    </div>
+    <div class="g-items">
       <p class="ms-5">
         <%=accountDetails.email%>
       </p>
     </div>
+  </div>
 
     <form method="get" action="/user/<%=accountDetails._id%>/edituserdetails">
 

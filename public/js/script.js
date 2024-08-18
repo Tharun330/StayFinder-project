@@ -27,6 +27,11 @@
 
 
  
-  
-  
+let humburger = document.querySelector(".humburger");
+let collapsemenu = document.querySelector(".downcollapsenavbar");
+humburger.addEventListener('click',() =>{
 
+  console.log("Burger clicked");
+ collapsemenu.classList.toggle("downcollapsenavbarappear");
+
+})

@@ -9,7 +9,7 @@
                         <%}%>
 
                             <body>
-                                <div class="secondNav dropdown-toggle-md">
+                                <div class="secondNav ">
                                     <div class="filterContainer">
                                         <a class="nav_a" href="/listings/rooms">
                                             <div class="filters">
@@ -22,7 +22,7 @@
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-mountain-city"></i>
-                                                <p>Iconic Cities</p>
+                                                <p id="para">Iconic Cities</p>
 
                                             </div>
                                         </a>
@@ -30,66 +30,66 @@
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-mountain-sun"></i>
-                                                <p>Mountains</p>
+                                                <p id="para">Mountains</p>
 
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/castles">
+                                        <a class="nav_a"href="/listings/castles">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-chess-rook"></i>
-                                                <p>Castle</p>
+                                                <p id="para">Castle</p>
 
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/amazingpools">
+                                        <a  class="nav_a"href="/listings/amazingpools">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-person-swimming"></i>
-                                                <p>Amazing Pools</p>
+                                                <p id="para">Amazing Pools</p>
 
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/camping">
+                                        <a  class="nav_a" href="/listings/camping">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-campground"></i>
-                                                <p>Camping</p>
+                                                <p id="para">Camping</p>
 
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/arctic">
+                                        <a class="nav_a" href="/listings/arctic">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-snowflake"></i>
-                                                <p>Arctic</p>
+                                                <p id="para">Arctic</p>
 
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/farms">
+                                        <a class="nav_a" href="/listings/farms">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-cow"></i>
-                                                <p>Farms</p>
+                                                <p id="para">Farms</p>
 
                                             </div>
                                         </a>
 
-                                        <a href="/listings/beachfront">
+                                        <a class="nav_a" href="/listings/beachfront">
                                             <div class="filters">
 
                                                 <i class="fa-solid fa-umbrella-beach"></i>
-                                                <p>BeachFront</p>
+                                                <p id="para">BeachFront</p>
 
                                             </div>
                                         </a>
@@ -105,13 +105,19 @@
 
                                     </div>
                                 </div>
+                                <div class="form-check form-checksmappear form-switch ">
+                                    <label class="form-check-label" for="flexSwitchCheckCheckedsm">Display Total After
+                                        Taxes</label>
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="flexSwitchCheckCheckedsm" unchecked>
+
+
+                                </div>
+                                
 
                                 <br>
 
-                                <!-- <h1>All Hotels List</h1> -->
-                                <!-- <form method="get" action="/listings/new">
-        <button>Add Place</button>
-    </form> -->
+            
 
                                 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
 
@@ -141,23 +147,6 @@
                                         <% } %>
                                 </div>
 
-
-
-
-
-
-
-
-                                <!-- <% for(let data of dataList) { %>
-
-        <li><a href="/listings/<%=data.id%>">
-                <%=data.title%>
-            </a></li>
-            <li><a href="/listings/<%=data.id%>">
-                <%=data.title%>
-            </a></li>
-
-        <% } %> -->
 
 
                                 <script>
@@ -196,12 +185,48 @@
                                                 price.style.display = "none"
                                             }
 
+                                    })
 
 
+ 
+
+                                    let formcheckinputsm = document.querySelector("#flexSwitchCheckCheckedsm");
 
 
-                                        console.log("helo");
+                                    formcheckinputsm.addEventListener('click', () => {
+                                        let priceafter = document.getElementsByClassName("priceafter");
+                                        let pricebefore = document.getElementsByClassName("pricebefore");
+
+                                        for (price of pricebefore)
+
+
+                                            if (price.style.display != "none") {
+
+                                                //   pricebefore.classList.add("hide");
+
+                                                price.style.display = "none"
+
+                                            } else {
+                                                price.style.display = "inline"
+                                            }
+
+
+                                        for (price of priceafter)
+
+
+                                            if (price.style.display != "inline") {
+
+                                                //   pricebefore.classList.add("hide");
+
+                                                price.style.display = "inline"
+
+                                            } else {
+                                                price.style.display = "none"
+                                            }
 
                                     })
+
+
+
                                 </script>
                             </body>
