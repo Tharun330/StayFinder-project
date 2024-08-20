@@ -6,15 +6,15 @@
             const locationDetails =  <%- JSON.stringify(data) %> ;
         </script>
 
-        <div class="row mt-3 mb-3">
-            <div class="col-8 offset-3 ">
+        <div class="row mt-3 mb-3 ">
+            <div class="col-8 offset-3 smshowcontainer ">
                 <h3><b>
                         <%=data.title%>
                     </b></h3>
             </div>
 
 
-            <div class="card col-6 offset-3 show-card listing-card">
+            <div class="card col-6 offset-3 show-card listing-card smshowcontainer">
                 <img src="<%=data.image.url%>" class="card-img-top show-img" style="height: 18rem;" alt="listing_image">
                 <div class="card-body">
                     <p><i>Owned by <%=data.owner.name%></i></p>
@@ -77,7 +77,7 @@
 
             <div class="row ">
                 <hr>
-                <form class="col-6 offset-3 needs-validation" method="POST" action="/listings/<%=data._id%>/reviews"
+                <form class="col-6 offset-3 needs-validation smshowcontainer" method="POST" action="/listings/<%=data._id%>/reviews"
                     novalidate>
 
                     <h3>Give Us Your Review About This Place</h3>
@@ -117,21 +117,21 @@
 
                 <hr>
 
-                <div class="offset-2">
+                <div class="offset-2 smshowcontainer">
                     <% if(data.reviews.length> 0 ) { %>
                         <h3>All Reviews</h3>
 
                         <%} %>
-                            <div class="row mt-3">
+                            <div class="row mt-3 smshowcontainer">
 
                                 <% for(review of data.reviews) { %>
 
 
-                                    <div class="row col-6">
+                                    <div class="row col-6 smshowcontainer">
 
 
-                                        <div class="card col-10 mb-3 review_box">
-                                            <div class="card-body">
+                                        <div class="card col-10 mb-3 review_box smcard">
+                                            <div class="card-body smcard">
                                                 <h5 class="card-title">
 
                                                     <p class="starability-result" data-rating="<%=review.rating%>">
@@ -144,12 +144,13 @@
                                                 <p class="card-text review_comment">
                                                     <%=review.comment%>
                                                 </p>
-                                                <form method="POST"
-                                                    action="/listings/<%=data._id%>/reviews/<%=review._id%>/?_method=DELETE">
+                                                <form method="POST" action="/listings/<%=data._id%>/reviews/<%=review._id%>/?_method=DELETE">
 
+                                                    <% if(currentUser.equals(review.author._id)){ %>
                                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                        <button class="btn btn-dark btn-sm me-md-2">Delete</button>
+                                                        <button class="btn btn-dark btn-sm me-md-2 reviewbtnsm">Delete</button>
                                                     </div>
+                                                    <% } %>
                                                 </form>
 
                                             </div>
@@ -167,7 +168,7 @@
 
 
 
-                <div class="offset-2 mt-3 mb-3">
+                <div class="offset-2 mt-3 mb-3 smshowcontainer">
                     <label class="">
                         <h3>Where you’ll be</h3>
                     </label>

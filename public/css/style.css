@@ -140,7 +140,7 @@ a{
 }
 
 #myAlert {
-    z-index: 1 !important;
+    z-index: 2 !important;
     transition: 1s !important;
 }
 
@@ -493,7 +493,28 @@ a{
         flex: 1 !important;
         padding: 0px 10px 0px 10px !important;
     }
-   
+   .smshowcontainer{
+    width: fit-content !important;
+    margin: auto !important;
+   }
+   .postButtonsContainer{
+    margin: 0px !important;
+    width: auto !important;
+    padding: 10px !important;
+
+   }
+   .smcard{
+    width: 250px !important;
+   }
+   .reviewbtnsm{
+    width: 100px !important;
+   }
+
+   #map{
+    height: 200px !important ;
+    width: 300px !important;
+    border-radius: 20px;
+   }
 }
 /* MAP */
 #map {
