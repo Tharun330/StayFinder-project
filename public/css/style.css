@@ -404,7 +404,7 @@ a{
     }
     .filterContainer{
         flex-wrap: nowrap;
-        max-height: 80px !important;
+        max-height: 79px !important;
     }
     .filterContainer a.nav_a{
         max-height: 80px !important;
