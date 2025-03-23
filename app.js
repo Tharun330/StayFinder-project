@@ -74,7 +74,7 @@ main().then(res => {
 
 
 async function main() {
-    await mongoose.connect(mongoDB);
+    await mongoose.connect(DB_URL);
 }
 
 
